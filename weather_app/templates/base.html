@@ -1,10 +1,26 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en-us">
     <head>
         <title>Weather app</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
-        
+        <header>Weather app</header>
+        <main>
+            <div class="prompt">
+                <form method="post" action="{% url 'process_form' %}">
+                    {% csrf_token %}
+                    <input title="Input city" type="text" name="city">
+                    <input type="submit" value="Check weather">
+                </form>
+            </div>
+            <div class="content-block">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+        <footer>Copyrights © n1n4zu 2025</footer>
     </body>
 </html>

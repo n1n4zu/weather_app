@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>City: {{ city }}</p>
+<p>Coordinates: {{ lattitude }} {% if lattitude >= 0 %}N{% else %}S{% endif %},
+    {{ long }} {% if long >= 0 %}E{% else %}W{% endif %} </p>
+<p>Temperature: {{ temperature }}°C</p>
+<p>Wind: {{ wind }} km/h</p>
+<p>Condition: {{ condition }}</p>
+<img src="{{ img }}">
+<p>Localtime: {{ localtime }}</p>
+
+{% endblock %}
