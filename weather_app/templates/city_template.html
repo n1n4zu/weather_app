@@ -2,13 +2,19 @@
 
 {% block content %}
 
-<p>City: {{ city }}</p>
-<p>Coordinates: {{ lattitude }} {% if lattitude >= 0 %}N{% else %}S{% endif %},
-    {{ long }} {% if long >= 0 %}E{% else %}W{% endif %} </p>
-<p>Temperature: {{ temperature }}°C</p>
-<p>Wind: {{ wind }} km/h</p>
-<p>Condition: {{ condition }}</p>
-<img src="{{ img }}">
-<p>Localtime: {{ localtime }}</p>
+<div class="content-block">
+
+    <p id="city">{{ city }}</p>
+    <p id="localtime">Local time: {{ localtime }}</p>
+    <p id="coord">Coordinates: {{ lattitude }} {% if lattitude >= 0 %}N{% else %}S{% endif %},
+        {{ long }} {% if long >= 0 %}E{% else %}W{% endif %}</p>
+    <p id="temp">Temperature: {{ temperature }}°C</p>
+    <p id="real_temp">Real feels like temperature: {{ feelslike }}°C</p>
+    <p id="press">Pressure: {{ pressure }} hPa</p>
+    <p id="wind">Wind: {{ wind }} {{ wind_dir }} km/h</p>
+    <img src="{{ img }}" alt="weather condition">
+<p id="cond">{{ condition }}</p>
+
+</div>
 
 {% endblock %}

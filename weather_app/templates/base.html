@@ -12,14 +12,12 @@
             <div class="prompt">
                 <form method="post" action="{% url 'process_form' %}">
                     {% csrf_token %}
-                    <input title="Input city" type="text" name="city">
+                    <input placeholder="Input city" type="text" name="city">
                     <input type="submit" value="Check weather">
                 </form>
             </div>
-            <div class="content-block">
                 {% block content %}
                 {% endblock %}
-            </div>
         </main>
         <footer>Copyrights © n1n4zu 2025</footer>
     </body>
